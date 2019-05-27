@@ -1,13 +1,33 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand|Varela+Round&display=swap");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  padding: 30px;
+  font-family: "Quicksand", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.main h1 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.search-form button {
+  margin: 20px;
+}
+
+.search-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.search-form label {
+  text-align: right;
+  margin-right: 10px;
+}
+
+.single-event h4 {
+  font-weight: bold;
 }
