@@ -1,8 +1,10 @@
 import { FETCH_EVENTS, EVENTS_LOADING } from "../actions/types";
+import { GET_ERRORS } from "../actions/types";
 
 const initialState = {
   events: {},
-  loading: false
+  loading: false,
+  error: null
 };
 
 export default function(state = initialState, action) {
@@ -11,12 +13,17 @@ export default function(state = initialState, action) {
       return {
         ...state,
         events: action.payload,
-        loading: false
+        loading: false,
+        error: null
       };
     case EVENTS_LOADING:
       return {
         ...state,
         loading: true
+      };
+    case GET_ERRORS:
+      return {
+        error: action.payload
       };
     default:
       return state;

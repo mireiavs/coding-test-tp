@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchEvents } from "../actions/eventActions";
-import Button from "react-bootstrap/Button";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 
 class SearchForm extends Component {
   constructor(props) {
@@ -31,38 +28,41 @@ class SearchForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="form-container">
+        <span className="form-heading">
+          <h1>Search for events</h1>
+        </span>
         <form onSubmit={this.handleSubmit} className="search-form">
-          <div className="search-inputs">
-            <div>
-              <label htmlFor="gameId">Game ID:</label>
-              <input
-                type="text"
-                id="gameId"
-                value={this.state.gameId}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="provider">Provider:</label>
-              <input
-                type="text"
-                id="provider"
-                value={this.state.provider}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="tpdid">TPD ID:</label>
-              <input
-                type="text"
-                id="tpdid"
-                value={this.state.tpdid}
-                onChange={this.handleChange}
-              />
-            </div>
+          <div className="input-group">
+            <label htmlFor="gameId">Game ID:</label>
+            <input
+              type="text"
+              id="gameId"
+              value={this.state.gameId}
+              onChange={this.handleChange}
+            />
           </div>
-          <Button type="submit">Search</Button>
+          <div className="input-group">
+            <label htmlFor="provider">Provider:</label>
+            <input
+              type="text"
+              id="provider"
+              value={this.state.provider}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="input-group">
+            <label htmlFor="tpdid">TPD ID:</label>
+            <input
+              type="text"
+              id="tpdid"
+              value={this.state.tpdid}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="search-btn">
+            <button type="submit">Search</button>
+          </div>
         </form>
       </div>
     );

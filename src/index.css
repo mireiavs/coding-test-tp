@@ -1,33 +1,106 @@
-@import url("https://fonts.googleapis.com/css?family=Quicksand|Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap");
 
 body {
   margin: 0;
-  padding: 30px;
-  font-family: "Quicksand", sans-serif;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #0f2027;
+  background: -webkit-linear-gradient(to left, #2c5364, #203a43, #0f2027);
+  background: linear-gradient(to left, #2c5364, #203a43, #0f2027);
 }
 
-.main h1 {
-  font-size: 30px;
-  font-weight: bold;
+#wrapper {
+  width: 90%;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  background-color: #0f2027;
+  width: 100%;
+  max-width: 40rem;
+  padding: 3rem 0;
+  box-shadow: 0 1px 1.5rem rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  z-index: 1;
+  color: #fff;
+}
+
+.form-heading {
   text-align: center;
 }
 
-.search-form button {
-  margin: 20px;
-}
-
-.search-inputs {
+.input-group {
+  width: 90%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.search-form label {
-  text-align: right;
-  margin-right: 10px;
+  align-items: baseline;
+  margin: 0.5rem auto;
 }
 
-.single-event h4 {
+.input-group input {
+  width: 60%;
+  margin-top: 0.5rem;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+}
+
+.input-group label {
+  width: 30%;
+  text-align: right;
+  padding-right: 1rem;
+}
+
+.search-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.search-btn button {
+  padding: 1rem;
+  background: #2c5364;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 3rem;
+  font-family: "Montserrat", "sans-serif";
+}
+
+.event-list {
+  width: 100%;
+}
+.single-event {
+  margin: 3rem auto;
+  background-color: #fff;
+  padding: 2rem;
+  box-shadow: 0 1px 1.5rem rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  z-index: 1;
+}
+
+.not-verified h4,
+.invalid-field {
+  color: red;
+}
+
+.error {
+  margin-top: 30px;
+  color: #fff;
   font-weight: bold;
 }
