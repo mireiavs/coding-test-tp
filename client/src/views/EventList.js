@@ -1,8 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import SearchForm from "../components/SearchForm";
 import moment from "moment";
+
+import SearchForm from "../components/SearchForm";
+import Loader from "../components/Loader";
 
 const EventList = props => {
   let eventList = "";
@@ -41,7 +43,7 @@ const EventList = props => {
       let verifiedText = "";
       if (!event.verified) {
         eventClass += " not-verified";
-        verifiedText = "- EVENT NOT VERIFIED";
+        verifiedText = "- NOT VERIFIED";
       }
 
       return (
@@ -50,28 +52,38 @@ const EventList = props => {
             {event.record.event_name ||
               event.record.evtname ||
               event.record.state_name}{" "}
-            - Creation date:{" "}
-            {moment(event.createdAt).format("MM-DD-YYYY [at] HH:mm")}{" "}
             {verifiedText}
           </h4>
+          <p>
+            Creation date:{" "}
+            {moment(event.createdAt).format("MM-DD-YYYY [at] HH:mm")}{" "}
+          </p>
           <ul>{record}</ul>
         </div>
       );
     });
   }
+
+  let view = "";
+
+  if (props.loading) {
+    view = <Loader />;
+  } else if (props.error) {
+    view = <p className="message">ERROR: {props.error}</p>;
+  } else if (props.events) {
+    if (props.events.count !== 0) {
+      view = <div className="event-list">{eventList}</div>;
+    } else {
+      view = (
+        <p className="message">There are no events that meet these criteria.</p>
+      );
+    }
+  }
+
   return (
     <div className="main">
       <SearchForm />
-
-      {props.loading ? (
-        <div>Loading</div>
-      ) : props.error ? (
-        <div>
-          <p className="error">ERROR: {props.error}</p>
-        </div>
-      ) : (
-        <div className="event-list">{eventList}</div>
-      )}
+      {view}
     </div>
   );
 };

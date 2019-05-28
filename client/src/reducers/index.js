@@ -1,5 +1,4 @@
-import { FETCH_EVENTS, EVENTS_LOADING } from "../actions/types";
-import { GET_ERRORS } from "../actions/types";
+import { FETCH_EVENTS, EVENTS_LOADING, GET_ERRORS } from "../actions/types";
 
 const initialState = {
   events: {},
