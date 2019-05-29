@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { fetchEvents } from "../actions/eventActions";
+import { fetchEvents } from "../actions";
 
 class SearchForm extends Component {
   constructor(props) {
