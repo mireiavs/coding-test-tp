@@ -6,6 +6,7 @@ const app = express();
 
 app.options("*", cors());
 
+// route to get events
 app.get("/events/:gameId/:provider/:tpdid", (req, res) => {
   const config = {
     params: {

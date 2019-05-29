@@ -1,7 +1,7 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { fetchEvents } from "../actions/eventActions";
-import PropTypes from "prop-types";
 
 class SearchForm extends Component {
   constructor(props) {
@@ -15,16 +15,25 @@ class SearchForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // fill state with user input
   handleChange(e) {
     this.setState({
       [e.target.id]: e.target.value
     });
   }
 
+  // on submit, check fields and if they all have content call function to fetch events
   handleSubmit(e) {
     e.preventDefault();
     const { gameId, provider, tpdid } = this.state;
-    this.props.fetchEvents(gameId, provider, tpdid);
+    // check if all fields are filled
+    if (gameId === "" || provider === "" || tpdid === "") {
+      this.props.getFormError("Please enter all fields.");
+    } else {
+      this.props.fetchEvents(gameId, provider, tpdid);
+      // clear form error
+      this.props.getFormError(null);
+    }
   }
 
   render() {

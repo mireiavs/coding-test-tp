@@ -7,9 +7,7 @@ body {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #0f2027;
-  background: -webkit-linear-gradient(to left, #2c5364, #203a43, #0f2027);
-  background: linear-gradient(to left, #2c5364, #203a43, #0f2027);
+  background: #f3f3f3;
 }
 
 #wrapper {
@@ -29,14 +27,14 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: 3rem;
-  background-color: #0f2027;
+  background-color: #e41025;
   width: 100%;
   max-width: 40rem;
   padding: 3rem 0;
-  box-shadow: 0 1px 1.5rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 1.5rem rgba(0, 0, 0, 0.35);
   border-radius: 1rem;
-  z-index: 1;
   color: #fff;
+  z-index: 1;
 }
 
 .form-heading {
@@ -73,7 +71,7 @@ body {
 
 .search-btn button {
   padding: 1rem;
-  background: #2c5364;
+  background: #7b7878;
   border: none;
   color: #fff;
   font-size: 1rem;
@@ -91,7 +89,7 @@ body {
   padding: 2rem;
   box-shadow: 0 1px 1.5rem rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
-  z-index: 1;
+  word-break: break-all;
 }
 
 .single-event h4 {
@@ -111,7 +109,7 @@ body {
 
 .message {
   margin-top: 30px;
-  color: #fff;
+  color: #2c5364;
 }
 
 /* Loader */
@@ -134,7 +132,7 @@ body {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #fff;
+  background: #7b7878;
   margin: -3px 0 0 -3px;
 }
 .lds-roller div:nth-child(1) {

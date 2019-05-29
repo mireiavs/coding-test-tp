@@ -1,6 +1,7 @@
 import axios from "axios";
 import { FETCH_EVENTS, EVENTS_LOADING, GET_ERRORS } from "./types";
 
+// get events from api through backend to avoid CORS blocking
 export const fetchEvents = (gameId, provider, tpdid) => dispatch => {
   dispatch(setEventsLoading());
   axios
@@ -20,15 +21,17 @@ export const fetchEvents = (gameId, provider, tpdid) => dispatch => {
     });
 };
 
+// set 'loading' state to true while events are being fetched
 export const setEventsLoading = () => {
   return {
     type: EVENTS_LOADING
   };
 };
 
-export const returnErrors = error => {
+// get api error if any
+export const returnErrors = apiError => {
   return {
     type: GET_ERRORS,
-    payload: error
+    payload: apiError
   };
 };

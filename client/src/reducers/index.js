@@ -3,7 +3,7 @@ import { FETCH_EVENTS, EVENTS_LOADING, GET_ERRORS } from "../actions/types";
 const initialState = {
   events: {},
   loading: false,
-  error: null
+  apiError: null
 };
 
 export default function(state = initialState, action) {
@@ -13,7 +13,8 @@ export default function(state = initialState, action) {
         ...state,
         events: action.payload,
         loading: false,
-        error: null
+        // reset api error field
+        apiError: null
       };
     case EVENTS_LOADING:
       return {
@@ -22,7 +23,7 @@ export default function(state = initialState, action) {
       };
     case GET_ERRORS:
       return {
-        error: action.payload
+        apiError: action.payload
       };
     default:
       return state;
